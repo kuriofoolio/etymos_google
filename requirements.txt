@@ -12,7 +12,6 @@ langchain-text-splitters==0.3.0
 langsmith==0.1.129
 python-dotenv==1.0.0
 pillow==10.2.0
-SQLAlchemy==2.0.25
 requests==2.31.0
 sqlalchemy==1.4.23
 Werkzeug==3.0.1
