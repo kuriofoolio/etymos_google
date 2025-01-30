@@ -33,7 +33,7 @@ load_dotenv("./config/.env")
 # Access environment variables
 flask_secret_key = os.getenv("FLASK_SECRET_KEY")
 
-app = Flask("Turathi")
+app = Flask(__name__)
 app.secret_key = flask_secret_key  # Required for session management
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -217,7 +217,7 @@ flow = Flow.from_client_secrets_file(
 )
 
 # ROUTES
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template("index.html")
 
@@ -543,10 +543,10 @@ def get_user_profiles():
 
 
 if __name__ == "__main__":
-    # app.run(debug=True)
+    app.run(debug=True)
 
     # in prod
 
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    # with app.app_context():
+    #     db.create_all()
+    # app.run(debug=True)
