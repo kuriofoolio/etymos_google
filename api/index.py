@@ -213,7 +213,8 @@ flow = Flow.from_client_secrets_file(
         "https://www.googleapis.com/auth/userinfo.email",
         "openid",
     ],
-    redirect_uri="http://127.0.0.1:5000/callback",
+    # redirect_uri="http://127.0.0.1:5000/callback",
+    redirect_uri="https://etymos-google.vercel.app/callback"
 )
 
 # ROUTES
@@ -542,11 +543,12 @@ def get_user_profiles():
     return {"user_profiles": user_profile_data}
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+application = app
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
-    # in prod
+#     # in prod
 
-    # with app.app_context():
-    #     db.create_all()
-    # app.run(debug=True)
+#     # with app.app_context():
+#     #     db.create_all()
+#     # app.run(debug=True)
