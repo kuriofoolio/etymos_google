@@ -1,0 +1,101 @@
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Grow your word power with Etymos" />
+    <meta property="og:description" content="Learn a weird word every day" />
+    <meta property="og:image" content="css/images/modules_poster_no_links.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+ 
+    <!-- JQUERY CDN -->
+    <script
+      
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+<!-- SCRIPTS AND STYLES  -->
+<script src="{{ url_for('static', filename='js/categories.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/api.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/game.js') }}" defer></script>
+  
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/new wotd.css') }} " />
+<link rel="icon" type="image/png+xml" href="{{ url_for('static', filename='css/images/logo.svg') }}" />
+
+  <!-- bootstrap -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+/>
+
+  <!-- for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+   
+
+
+    <title>Etymos - Words & Culture</title>
+
+    <!-- for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    
+    <div class="container">
+      <!-- <h2><strong class="gradient-text">Test your word power</strong>🤔</h2> -->
+      <h2 id="game-caption"></h2>
+
+      <div id="image-container">
+        <img id="image" height="150" width="150" alt="Fetched Image" />
+      </div>
+
+       <!-- The Modal -->
+       <div id="pangramModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" >&times;</span>
+          <p></p>
+          <!-- <button class='btn-continue'>Find more words</button> <br> -->
+          <!-- <button class='btn-share'>Share with friends</button> -->
+        </div>
+      </div>
+
+      <div class="content">
+        <p class="word"></p>
+        <div class="details">
+          <p class="hint"><span></span></p>
+          <!-- <p style="color: crimson" class="time">
+            Time left: <span><b></b>s</span>
+          </p> -->
+        </div>
+        <input type="text" placeholder="Enter your answer" id="" />
+        <div class="buttons">
+          <!-- <button class="refresh-word"><b>Shuffle rack</b></button> -->
+
+          <!-- <i class="fas fa-sync-alt"></i> -->
+          <button class="btn_shuffle_letters"><b>Shuffle</b></button>
+          <p style="color: crimson" class="time">
+            Time left: <span><b></b>s</span>
+          </p>
+          <button class="check-word"><b>Solve</b></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

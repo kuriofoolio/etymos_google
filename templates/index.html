@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Know your words with Turathi</title>
+    <meta property="og:title" content="Grow with Turathi" />
+    <meta property="og:description" content="Your passport to a new culture" />
+    <meta property="og:image" content="../static/css/images/everyday-poster.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='css/images/turathi wout bg.png') }}" />
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+    <!-- JQUERY CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comme&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Playwrite+HR+Lijeva:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Stylesheet-->
+
+    <!-- Custom CSS -->
+    <style>
+     
+
+      .loader {
+        border: 3px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 3px solid #3498db;
+        width: 24px;
+        height: 24px;
+        animation: spin 1s linear infinite;
+        display: none;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      body {
+        font-family: "Karla", sans-serif;
+        
+        background-image: url("{{ url_for('static', filename='css/images/landing_page_background.png') }}");
+        color: #333;
+      }
+      .font-twenty {
+        font-size: 17px;
+      }
+      .navbar {
+        
+        background-color: #028a56;
+
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ffd700;
+      }
+
+      .navbar-brand img {
+        height: 70px;
+      }
+
+      .main-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 70vh;
+        background-color: rgba(252, 244, 189, 0.938); 
+        padding: 20px; /* Adds padding for a card feel */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        width: 75%; /* Set width as needed */
+        /*max-width: 800px; /* Limit maximum width */
+        margin: auto; /* Center horizontally */
+      }
+
+
+.display-4 {
+        font-family: "Edu AU VIC WA NT Hand", cursive;
+        color: #8d2f2f;
+        text-align: center;
+        margin-bottom: 20px;
+        background-color: rgba(252, 244, 189, 0.8); /* Semi-transparent white */
+        padding: 20px; /* Adds padding for a card feel */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        width: 90%; /* Set width as needed */
+        /*max-width: 800px; /* Limit maximum width */
+        margin: auto; /* Center horizontally */
+      }
+
+      .search-box {
+        width: 60%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 2px solid #ffd700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        flex-grow: 1;
+        font-size: 18px;
+        padding-left: 10px;
+      }
+
+      .search-box input::placeholder {
+        color: #aaa;
+      }
+
+      .search-box button {
+        background-color: #ffd700;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-box button:hover {
+        background-color: #ffcc00;
+      }
+
+      #name-meaning,
+      #image-showcase {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .word-grid {
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+
+      .word-grid .card {
+        border: none;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .word-grid .card:hover {
+        transform: scale(1.05);
+      }
+
+      .word-grid .card img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 150px;
+      }
+
+      .word-grid .card-body {
+        text-align: center;
+      }
+
+      .btn-share {
+        display: block;
+        margin: 20px auto;
+        background-color: #28a745;
+        border: none;
+        color: #fff;
+        width: fit-content;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-share:hover {
+        background-color: #218838;
+      }
+
+      .card-img-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+      }
+
+      .image-overlay:hover {
+        opacity: 1;
+        background-size: cover;
+        background-position: center;
+      }
+
+      
+      .overlay-text h6 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .overlay-text a {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #b84040;
+      }
+
+      .card-text {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .info-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      footer .nav-link {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      footer .nav-link:hover {
+        color: #ffd700;
+      }
+
+      footer .social-icons a {
+        color: #ffd700;
+        margin: 0 10px;
+        font-size: 30px;
+        text-decoration: none;
+      }
+
+      footer .social-icons a:hover {
+        color: #ffcc00;
+      }
+
+      .gallery {
+        padding: 30px;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+      }
+      .gallery-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+
+      a[class="col-12 col-sm-6 col-lg-4"] {
+        display: block;
+        text-decoration: none;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+        
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .share-buttons img {
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+      }
+
+      .start-selling-button {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: relative; /* For positioning confetti */
+      }
+
+      .confetti {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #ff00ff;
+        border-radius: 50%;
+        animation: confetti-fall 2s infinite linear;
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+
+      .result button {
+        background-color: transparent;
+        color: #218838;
+        border: none;
+        outline: none;
+        font-size: 18px;
+      }
+
+      .hidden-module {
+    display: none;
+
+  }
+
+
+
+.search-box {
+        width: 60%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 2px solid #ffd700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        flex-grow: 1;
+        font-size: 18px;
+        padding-left: 10px;
+      }
+
+      .search-box input::placeholder {
+        color: #aaa;
+      }
+
+      .search-box button {
+        background-color: #ffd700;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-box button:hover {
+        background-color: #ffcc00;
+      }
+      #search-button{
+        
+        text-align: center;
+      }
+
+      /* #image-container {
+  margin-bottom: 20px;
+} */
+
+#searched-image {
+  border: 5px solid #4CAF50;
+  border-radius: 50%;
+}
+
+     /* .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      } */
+
+      .g_id_signin {
+        margin-top: 20px;
+      }
+
+    </style>
+
+ 
+
+  </head>
+  <body>
+<section class="main-section">
+  <h2  class="display-4">Welcome to Turathi</h2>
+  <h3>Your passport to cultural appreciation</h3>
+  <a
+  href="{{ url_for('home') }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="btn btn-share mt-4"
+  >Sign in</a
+>
+</section>
+
+    
+
+ 
+
+
+   
+
+
+  </body>
+</html>

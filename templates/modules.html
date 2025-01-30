@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+   
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Etymos - Words & Culture</title>
+      <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='/css/images/logo.svg') }} " />
+      <link rel="stylesheet" href="{{ url_for('static', filename='/css/modules.css') }}" />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Comme&display=swap"
+        rel="stylesheet"
+      />
+  
+    </head>
+  
+    <body>
+      <header>
+        <a class="logo" href="{{ url_for('index') }}" title="Home">
+          <img src="{{ url_for('static', filename='/css/images/logo.svg') }} " alt="Logo" />
+        </a>
+      </header> 
+      <h2 class="headings">Choose a module to play</h2>
+      <select title="modules" name="modules" id="modules">
+        <option value="">Choose here ⬇️</option>
+        <!-- <option value="games">Olympics Edition 🏐 ⚽ 🎾</option> -->
+        <option value="music">Music 🎶</option>
+        <option value="greek">Greek 🇬🇷</option>
+        <option value="latin">Latin 🔱 </option>
+        <option value="birds">Birds 🐦</option>
+        <option value="german">German 🇩🇪</option>
+        <option value="hindi">Hindi 🛕</option>
+        <option value="chinese">Chinese 🇨🇳</option>
+        <option value="russian">Russian 🇷🇺</option>
+        <option value="yiddish">Yiddish 🕍 </option>
+        <option value="jewish">Jewish 🕎</option>
+        <option value="plants">Plants ☘️</option>
+        <option value="drinks">Drinks 🥂</option>
+        <option value="foods">Foods 😋</option>
+        <option value="clothes">Clothes 🤩</option>
+        <option value="money">Money 🤑</option>
+      </select>
+  <br><br><br>
+  
+  <!-- <button type="button"  class="act act-afro">
+  
+  
+     <a href="/labor.html" class="gradient-text">Labor Day Edition ⚒️ </a> 
+    
+  </button> -->
+  
+
+  
+  <br><br><br>
+  
+  <a class="act act-afro" href="https://forms.gle/YWBckf99XTwtuehj9"
+  >Share Feedback</a
+  >
+  
+    <script defer>
+       
+        // Get the select element
+        const selectElement = document.getElementById("modules");
+  
+        // Add event listener to listen for changes
+        selectElement.addEventListener("change", function () {
+            // Get the selected value
+            const selectedValue = this.value;
+  
+            // Check if a value is selected
+            if (selectedValue) {
+                // Redirect the user to the selected page
+                // window.location.href= `http://127.0.0.1:5500/game.html?module=${selectedValue}`;
+                window.location.href= `https://etymos.netlify.app/game.html?module=${selectedValue}`;
+            }
+        });
+    
+    </script>
+  
+      <footer>
+        <p>&copy; 2024 Etymos</p>
+      </footer>
+    </body>
+  </html>

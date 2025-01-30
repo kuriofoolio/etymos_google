@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- game preview -->
+        <meta property="og:title" content="Play the Olympic Day Edition on Etymos">
+        <meta property="og:description" content="Can you find today's pangram ?">
+        <meta property="og:image" content="css/images/modules_poster_no_links.png"/>
+        <!-- <meta property="og:image:width" content="1065"> 
+<meta property="og:image:height" content="102"> -->
+        <meta property="og:url" content="/games.html">
+        <meta property="og:type" content="website">
+        <meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+        
+<!-- SCRIPTS -->
+<script src="{{ url_for('static', filename='wotd-js/api.js') }}" defer></script>
+<script src="{{ url_for('static', filename='wotd-js/variants.js') }}" defer></script>
+<script src="{{ url_for('static', filename='wotd-js/config.js') }}" defer></script>
+<script src="{{ url_for('static', filename='wotd-js/index.js') }}" defer></script>
+  
+
+        
+        
+      <!-- STYLES -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/word-of-the-day.css') }} " />
+      <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename=' /css/images/logo.svg') }}" />
+  
+      
+
+      <!-- JQUERY CDN -->
+    <script
+    
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+
+      
+      <title>Etymos - Olympic Day Edition 🏐 ⚽ 🎾</title>
+    </head>
+    <body class="bg-light min-vh-100 d-flex align-items-center">
+      <div class="container h-100">
+        <!-- challengeHeading   -->
+        <div class="row justify-content-center align-items-center mb-3" id="challengeHeading">
+              Etymos Olympic Day Edition 🏐 ⚽ 🎾
+        </div>
+
+        <!-- pangram heading -->
+        <div id="challengeQuestion" class="row justify-content-center align-items-center mb-3">
+          Can you find today's pangram ?
+        </div>
+  
+        <!-- pangram hint -->
+        <div
+          class="gradient-text row justify-content-center align-items-center"
+          id="pangram"
+        ></div>
+  
+        <div class="row">
+          <div class="col-12 col-md-8 p-0">
+            <div class="mr-3 d-flex flex-column rounded border border-secondary">
+              <!-- LETTER ASSEMBLY LINE (LAL)-->
+              <div class="card m-3">
+                <div class="card-body display-4 text-center" id="LAL">
+                  <wbr />
+                </div>
+              </div>
+  
+              <!-- BUBBLE CONTAINER -->
+              <div
+                class="d-flex justify-content-around mb-2"
+                id="BubbleContainer"
+              >
+                <!-- BUBBLE TEMPLATE  -->
+                <!-- class="bubble rounded-circle text-white d-flex justify-content-center align-items-center" -->
+                <div
+                
+                class="bubble rounded-circle text-white d-flex justify-content-center align-items-center"
+                  type="button"
+                ></div>
+              </div>
+  
+              <!-- The Modal -->
+              <div id="pangramModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close" >&times;</span>
+                  <p>You found the Pangram of the day!</p>
+                  <button class='btn-continue'>Find more words</button> <br>
+                  <button class='btn-share'>Share with friends</button>
+                </div>
+              </div>
+  
+              <!-- BUTTONS -->
+              <div class="d-flex justify-content-center my-3">
+                <div class="btn btn-danger mr-2" id="delete">Delete</div>
+                <!-- <div class="btn btn-warning bg-gradient mr-2" id="refresh">Refresh</div> -->
+                <div class="btn btn-warning bg-gradient mr-2" id="shuffle">
+                  Shuffle
+                </div>
+                <div class="btn btn-success bg-gradient" id="submit">Submit</div>
+
+                <div class="btn bg-gradient" id="shareWordList">Share</div>
+              </div>
+            </div>
+          </div>
+  <!-- secondary had this : bg-success   -->
+          <div id="secondary" class="col-12 col-md-4 p-0 bg-gradient rounded">
+            <div id="SavedWordContainer" class="d-flex flex-wrap m-3">
+           
+              <div class="badge badge-light mr-1 word-badge">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+ 
+
+    </body>
+  </html>

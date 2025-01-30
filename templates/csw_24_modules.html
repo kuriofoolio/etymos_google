@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+   
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Etymos - Words & Culture</title>
+      <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='/css/images/logo.svg') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='modules.css') }}" />
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Comme&display=swap"
+        rel="stylesheet"
+      />
+  
+    </head>
+  
+    <body>
+      <header>
+        <a class="logo" href="{{ url_for('index') }}" title="Home">
+          <img src="css/images/logo.svg" alt="Logo" />
+        </a>
+      </header> 
+      <h2 class="headings">See what's new in CSW24</h2>
+      <select title="modules" name="modules" id="modules">
+        <option value="">Choose here ⬇️</option>
+        <option value="3s">3s ⚂</option>
+        <option value="4s">4s ⚃</option>
+        <option value="5s">5s ⚄</option>
+        <option value="6s">6s ⚅</option>
+        <option value="7s">7s ⚃⚂</option>
+        <option value="8s">8s ⚃⚃</option>
+        
+       
+      </select>
+  <br><br><br>
+  
+
+
+  
+  <br><br><br>
+  
+  <a  rel ='noopener'  class="act act-afro" target="_blank" href="https://forms.gle/YWBckf99XTwtuehj9"
+  >Share Feedback</a
+  >
+  
+    <script defer>
+       
+        // Get the select element
+        const selectElement = document.getElementById("modules");
+  
+        // Add event listener to listen for changes
+        selectElement.addEventListener("change", function () {
+            // Get the selected value
+            const selectedValue = this.value;
+  
+            // Check if a value is selected
+            if (selectedValue) {
+                // Redirect the user to the selected page
+                // window.location.href= `http://127.0.0.1:5500/csw24.html?module=${selectedValue}`;
+                window.location.href= `https://etymos.netlify.app/csw24.html?module=${selectedValue}`;
+            }
+        });
+    
+    </script>
+  
+      <footer>
+        <p>&copy; 2024 Etymos</p>
+      </footer>
+    </body>
+  </html>

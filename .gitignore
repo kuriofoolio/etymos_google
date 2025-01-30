@@ -1,0 +1,17 @@
+/test
+css/test_images
+pusher.sh
+.env
+.vscode
+css/search.css
+/.hintrc
+/remover.sh
+/data
+/csw24_read.py
+/scripts
+/home_prev.txt
+.vercel
+/config/imports.sh
+/config/remover.sh
+/config/__pycache__
+__pycache__

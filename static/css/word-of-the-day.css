@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "mario";
+  font-size: 1000dp;
+  src: url("fonts/mario.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "easter";
+  font-size: 1000dp;
+  src: url("fonts/EasterFont\ St.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "olympic";
+  font-size: 1000dp;
+  src: url("fonts/Play\ Story.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+
+
+@font-face {
+  font-family: "labor-regular";
+  font-size: 1000dp;
+  src: url("fonts/LaborUnionRegular-X34yZ.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "labor-small";
+  font-size: 1000dp;
+  src: url("fonts/LaborUnionSmall-L3ayE.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+
+@font-face {
+  font-family: "selamat";
+  font-size: 1000dp;
+  src: url("fonts/Selamat Ramadhan.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "bismillah";
+  font-size: 1000dp;
+  src: url("fonts/Bismillah\ Script.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "kahlil";
+  font-size: 1000dp;
+  src: url("fonts/Kahlil.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "khodijah";
+  font-size: 1000dp;
+  src: url("fonts/Khodijah\ Free.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "arabic";
+  font-size: 1000dp;
+  src: url("fonts/Arabic\ Ramadhan.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "nabla-regular";
+  src: url("fonts/Nabla-Regular.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "nabla-variable";
+  src: url("fonts/Nabla-Regular-VariableFont_EDPT\,EHLT.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "press";
+  font-weight: bolder;
+  src: url("fonts/PressStart2P-Regular.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "plants-font";
+  font-weight: bolder;
+  src: url("fonts/Earth\ Days.ttf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+@font-face {
+  font-family: "kenya";
+  font-weight: bolder;
+  src: url("fonts/kenyan\ coffee\ stencil\ sb.otf") format("truetype"); /* Add additional formats if needed */
+  /* You can include more font variations (e.g., font-weight, font-style) here */
+}
+
+
+/* header .logo {
+  display: inline-block;
+  background-color: #f1f5f9;
+
+  width: 100%;
+  height: 100;
+} */
+
+header {
+  background-color: #f1f5f9;
+  padding: 10px; /* Add padding to the header */
+}
+
+header .logo {
+  display: block; /* Change from inline-block to block */
+  max-width: 100%; /* Limit the maximum width of the logo */
+  height: auto; /* Allow the logo's height to adjust proportionally */
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+body {
+  font-family: "mario", sans-serif;
+  color: #00900A;
+  /* background-color: #000; */
+  
+}
+
+.card {
+  font-family: "mario", sans-serif;
+}
+
+#challengeHeading {
+  font-family: "olympic", sans-serif;
+  /* font-family: "labor-regular", sans-serif; */
+  /* bismillah kahlil khodijah arabic selamat; */
+  font-size: xx-large;
+}
+
+#challengeQuestion{
+  font-family: "olympic", sans-serif;
+  /* bismillah kahlil khodijah arabic selamat; */
+  /* font-size: xx-large; */
+}
+
+
+
+/* #secondary {
+  background-color: #ffa600;
+} */
+
+.bubble {
+  width: 50px;
+
+  /* madaraka colors */
+  /* background: green; */
+
+  /* eid al adha colors */
+  background: rgb(131, 152, 44); 
+
+  font-weight: bolder;
+  font-family: "mario", sans-serif;
+  font-size: xx-large;
+  height: 50px;
+}
+
+#shareWordList {
+  
+  background: rgb(36, 165, 24);
+
+  color: white;
+}
+
+.mr-3 {
+
+  /* madaraka colors */
+  /* background: rgb(43, 203, 28); */
+
+  
+    /* eid al adha colors */
+    background: rgb(177, 206, 59); 
+
+}
+
+#secondary {
+  /* madaraka colors  */
+  /* background: rgb(19, 132, 9); */
+
+  
+    /* eid al adha colors */
+    /* dark  */
+    background: rgb(98, 120, 10); 
+
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+  /* font-family: 'arabic', 'sans-serif'; */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* pangram hint animation */
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-text {
+  background-image: linear-gradient(to left, crimson, chartreuse);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  color: transparent;
+  background-size: 200% 100%;
+  /* font-family: 'mario', sans-serif;
+  font-size: 100dp; */
+  animation: gradientMovement 3s linear infinite;
+}

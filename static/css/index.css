@@ -1,0 +1,492 @@
+/* Global Styles */
+
+body {
+  font-family: "Comme", sans-serif;
+  /* font-family:  */
+
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  /* background-image: url("images/Untitled.jpeg"); */
+  /* background-size: 250px; */
+  background-color: #f1f5f9;
+  /* background-color:#FFA500; */
+
+  /* f6f6f6 4c1d95 f1f5f9 ff9776 fff  0d0950  */
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#name-meaning {
+  background-color: white;
+}
+
+/* #name-label
+{
+  transform: translate(-10%,-10%);
+  display: flex;
+} */
+
+#name-input {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #eaeaea;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  /* transform: translate(-50%,-50%);
+  display: flex; */
+}
+
+#name-input:hover,
+#name-input:focus {
+  background-color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#name-button {
+  margin: 10px 0;
+  padding: 12px 24px;
+}
+
+form {
+  text-align: center;
+  color: black;
+}
+
+fieldset {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  /* color: darkgoldenrod; */
+  color: #fff;
+  background-color: darkgoldenrod;
+  /* border-color: burlywood; */
+}
+
+a:hover {
+  color: #fff;
+  background-color: rgb(34, 32, 32);
+  /* border-color: darkgoldenrod; */
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+
+/* header h1 {
+  margin: 0;
+} */
+header .logo {
+  display: inline-block;
+  background-color: #f1f5f9;
+
+  width: 100%;
+  height: 100;
+}
+
+header a img {
+  display: block;
+  max-width: 10%;
+  height: auto;
+  margin: 10px auto;
+}
+
+/* Main Styles */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  background-color: whitesmoke;
+  display: inline-block;
+}
+
+section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+section li {
+  margin-bottom: 2%;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: 16%;
+  text-align: center;
+}
+
+header,
+footer {
+  padding: 10px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  /* user-select: none; */
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: burlywood;
+  border-color: burlywood;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: darkgoldenrod;
+  border-color: darkgoldenrod;
+}
+
+/* Play Game Page Styles */
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  margin-bottom: 10px;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  flex-basis: calc(50% - 20px);
+}
+
+.answer:hover {
+  background-color: #ddd;
+}
+
+.answer.selected {
+  background-color: #3c9;
+  color: #fff;
+  border-color: #3c9;
+}
+
+.answer.correct {
+  background-color: #5cb85c;
+  color: #fff;
+  border-color: #5cb85c;
+}
+
+.answer.incorrect {
+  background-color: #d9534f;
+  color: #fff;
+  border-color: #d9534f;
+}
+
+#timer {
+  display: inline-block;
+  background-color: #3c9;
+  color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#score {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Categories styles */
+h2 {
+  text-align: center;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.act {
+  background-color: #3c9;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.act:hover {
+  background-color: #5cb85c;
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.act:focus {
+  outline: none;
+}
+
+.act-afro {
+  background-color: #333;
+}
+
+.act-afro:hover {
+  background-color: #666;
+}
+
+/* Container for links */
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
+/* button {
+  color: #016f32;
+  width: 150px;
+  background: goldenrod;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+} */
+
+/* 
+.wp-block-button {
+  display: inline-block;
+  background-color: chartreuse;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  margin: 10px 0;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wp-block-button:hover {
+  background-color: black;
+  cursor: pointer;
+}  */
+
+/* POPUP STYLES */
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  /* display: inline-block; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: translate(50%, 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: green;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: auto;
+  max-width: 300px; /* Added max-width to limit the width of the popup */
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%; /* Increased the distance to avoid overlapping with the arrow */
+  left: 50%;
+  transform: translateX(-50%); /* Center the popup horizontally */
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  transform: translateX(-50%); /* Center the arrow horizontally */
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* SLIDESHOW  */
+/* * {
+  box-sizing: border-box;
+} */
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  z-index: -1;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* resize slideshow images */
+.mySlides img {
+  width: 50%;
+  max-height: fit-content;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* style the select */
+
+/* Custom select styles */
+select {
+  appearance: none;
+  background-color: #f6f6f6;
+  border: 2px solid #b07c38;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  color: #222;
+  font-family: "Arial", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Add African-inspired background image */
+  background-image: url("african_pattern.png");
+  background-size: cover;
+}
+
+/* Style the arrow icon (down arrow) */
+select::-ms-expand {
+  display: none;
+}
+
+select::after {
+  content: "\f078"; /* Unicode for down arrow icon (fa-chevron-down) */
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #b07c38;
+  font-size: 16px;
+}
+
+/* Change select background on hover */
+select:hover {
+  background-color: #e6e6e6;
+}
+
+/* title animation  */
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-text {
+  background-image: linear-gradient(to left, crimson, chartreuse);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  color: transparent;
+  background-size: 200% 100%;
+  animation: gradientMovement 3s linear infinite;
+}
+
+
